@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #404040;
+  font-family: 'Roboto', sans-serif;
+  list-style: none
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+header {
+  display: flex;
+  height: 150px;
+  background: #f5ebe0 url(https://europe.wordcamp.org/2017/files/2017/01/background-pattern-01.png);
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+}
+
+/* ---------- Left ---------- */
+
+.left {
+  background: #ffffff;
+  padding: 80px 50px;
+}
+
+.left li {
+  border-bottom: 1px dotted black;
+  padding: 50px 0;
+}
+
+.left h1 {
+  font-size: 2.7em;
+}
+
+.left p {
+  font-size: 1.5em;
+}
+
+.left li p:nth-of-type(1) {
+  padding: 10px 0;
+}
+
+.left li p:nth-of-type(2) {
+  font-weight: bold;
+}
+
+.left li:nth-last-of-type(1) {
+  border-bottom: none;
+}
+
+/* ---------- Right ---------- */
+
+.right {
+  display: grid;
+  grid-template-areas: 
+  "logo logo"
+  "info info"
+  "menu1 location"
+  "menu2 location"
+  "menu3 location"
+  "menu4 location";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 350px 200px 300px 250px 250px 300px auto;
+  background: #262427;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+span:first-of-type a {
+  color: #2c292c;
+}
+
+.right img {
+  width: 260px;
+  grid-column: span 2;
+  place-self: center;
+}
+
+.right .info {
+  grid-column: span 2;
+  grid-area: info;
+  justify-self: center;
+  text-align: center;
+}
+
+.info h1 {
+  color: #cb9965;
+  font-size: 2.5em;
+}
+
+.info p{
+  color: #aeaeae;
+  font-size: 1.5em;
+}
+
+.right img {
+  grid-area: logo;
+}
+
+.right span {
+  display: flex;
+  font-weight: bold;
+  font-size: 3em;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.right span:nth-of-type(1) {
+  background-color: #f1e4d5;
+  color: #2c292c;
+  grid-area: menu1;
+}
+
+.right span:nth-of-type(2) {
+  background-color: #e7ab47;
+  grid-area: menu2;
+}
+
+.right span:nth-of-type(3) {
+  background-color: #68470c;
+  grid-area: menu3;
+}
+
+.right span:nth-of-type(4) {
+  background-color: #cc9965;
+  grid-area: menu4;
+}
+
+.right .location {
+  grid-area: location;
+  grid-row: span 2;
+  color: white;
+  padding: 50px;
+  font-size: 2em;
+}
+
+.location p {
+  font-style: italic;
+  padding-top: 50px;
+}
+
+@media (max-width: 1280px) {
+  .right {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "logo"
+    "info"
+    "menu1"
+    "menu2"
+    "menu3"
+    "menu4"
+    "location";
+  }
+}
+
+@media (max-width: 650px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    font-size: 1em;
+  }
+
+  .left h1 {
+    font-size: 1.5em;
+  }
+
+  .left p {
+    font-size: 1em;
+  }
+
+  .right span {
+    font-size: 1.8em;
+  }
+
+  .right .location {
+    font-size: 1em;
+    padding: 20px;
+  }
+
+  .right img {
+    width: 200px;
+  }
+
+  .info h1 {
+    font-size: 1.5em;
+  }
+
+  .info p {
+    font-size: 1em;
+  }
+
+  .right {
+    grid-template-rows: 250px 100px 150px 150px 150px 150px auto;
+  }
+}
